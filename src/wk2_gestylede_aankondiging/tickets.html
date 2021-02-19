@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Week2</title>
+    <!--Hier ook de styling, helaas wist ik hier ook niet hoe ik de CSS file kan importeren dus vandaar de styling hier-->
+    <style>
+        .lettergrootte {
+            font-size: 150%;
+            color: yellow;
+        }
+        .prijzen {
+            font-size: 120%;
+            color: greenyellow;
+        }
+        .center {
+            text-align: center;
+        }
+        html {
+            background: url(https://user-images.githubusercontent.com/73429317/108425957-78304b80-723b-11eb-936d-f818e20909db.jpg)
+            no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        #left{
+            position: relative;
+            top:-83px;
+            left:0;
+        }
+        #right{
+            position: relative;
+            top:-230px;
+            right:0;
+        }
+        table, th, td {
+            border: 1px solid yellow;
+            empty-cells: hide;
+        }
+        body{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<!--titel-->
+<div class="center">
+    <h1 style="color: yellow">Kaartjes</h1>
+</div>
+<!--de foto's-->
+<div id="left" style="text-align: left"><img src="https://user-images.githubusercontent.com/73429317/108427466-7ff0ef80-723d-11eb-882c-596cb4ec3dd4.jpg"
+                                             width="300"/></div>
+<div id="right" style="text-align: right"><img src="https://user-images.githubusercontent.com/73429317/108427466-7ff0ef80-723d-11eb-882c-596cb4ec3dd4.jpg"
+                                               width="300"/></div>
+<!--Hier wist ik helaas ook niet hoe ik de paragraven en alles meer naar boven kan zetten, ik hoor graag hoe dit
+wel kan-->
+<div class="lettergrootte"><p>Hieronder vind je de prijzen van de kaartjes:</p></div>
+
+<div class="prijzen">
+<li>Zaterdag: &euro;110</li>
+<li>Zondag: &euro;110</li>
+<li>Maandag: &euro;110</li>
+<li>Weekend: &euro;230</li>
+</div>
+<!--Een return knop is wel handig:)-->
+<div class="lettergrootte"><p><a href="index.html">TERUG</a></p></div>
+
+<hr>
+<p><em>Aan informatie op deze site kunnen rechten worden ontleend.</em></p>
+<p><em>Buro Pinkpop, Geleen</em></p>
+
+</body>
+
+
+
+</html>
