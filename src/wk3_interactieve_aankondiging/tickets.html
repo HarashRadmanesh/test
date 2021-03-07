@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Week2</title>
+   <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<!--titel-->
+<div id="header">
+    <div id="left" style="text-align: left"><img src="https://user-images.githubusercontent.com/73429317/108427466-7ff0ef80-723d-11eb-882c-596cb4ec3dd4.jpg"
+                                                 width="300"/></div>
+    <div class="center">
+        <h1 style="color: yellow">8 t/m 10 <br>Juni 2021</br></h1>
+    </div>
+    <div id="right" style="text-align: right"><img src="https://user-images.githubusercontent.com/73429317/108427466-7ff0ef80-723d-11eb-882c-596cb4ec3dd4.jpg"
+                                                   width="300"/></div>
+</div>
+<div class="yellow-header"><p><strong>Hieronder vind je de prijzen van de kaartjes:</strong></p></div>
+<div class="yellow-header"><p>(Vul de onderstaande formulier in om een kaartje toe te voegen aan je bestelling)</p></div>
+<div class="dropdown">
+    <form>
+        <select name="list" id="list" accesskey="target" onchange="showOptions(this); updateDisplay(this)">
+            <option value="none">Select your festival</option>
+            <option value="tickets">PinkPop</option>
+        </select>
+        <input type=button id="but" value="Select" onclick="showOptions(); updateDisplay()" />
+        <div><mark id="coutner"></mark></div>
+    </form>
+
+</div>
+<div id="div"></div>
+<div class="yellow-header"><p><a href="index.html">TERUG</a></p></div>
+
+<hr>
+<p><em>Aan informatie op deze site kunnen rechten worden ontleend.</em></p>
+<p><em>Buro Pinkpop, Geleen</em></p>
+<!-- ook hier kon ik niet de javascript importen -->
+<script>let count = 0;
+let totalCost = 0;
+let div = document.getElementById("coutner");
+
+function init() {
+    count = 0;
+    let button = document.getElementById("but");
+    button.onclick = updateDisplay;
+}
+
+function updateDisplay() {
+    div.innerHTML = `You have ${count} items and a total cost of $${totalCost}`;
+}
+
+function showOptions(el) {
+    let userPicked = el.value;
+    var div = document.getElementById("div");
+    if (userPicked != 'none') {
+        var newContent = (tickets.store);
+        newContent += '<div>';
+        Object.keys(tickets.inventory).forEach(key => {
+            newContent += key;
+            newContent += '<div>';
+            var items = Object.values(tickets.inventory[key]);
+            items.forEach(item => {
+                newContent += `
+<div>&nbsp;
+  <span class="brand"> ${item.brand}</span>
+  <span class="price">$${item.cost}</span>
+  <input type=button value="Add" onclick="add(this,${item.cost})"/>
+</div>`;
+            });
+            newContent += '</div>';
+        });
+        newContent += '</div>';
+        div.innerHTML = newContent;
+    }
+}
+
+function add(element,cost) {
+    console.clear();
+    totalCost += parseInt(cost);
+    count++;
+    console.log(element.closest('div').textContent.trim());
+    updateDisplay();
+}
+
+
+let tickets = {
+    store: "8 t/m 10 juni 2021",
+    inventory: {
+        "Tickets": {
+            0: {
+                brand: "Zaterdag",
+                cost: 110
+            },
+            1: {
+                brand: "Zondag",
+                cost: 110
+            },
+            2: {
+                brand: "Maandag",
+                cost: 110
+            },
+            3:  {
+                brand: "Weekend",
+                cost: 230
+            }
+        }
+    }
+};
+</script>
+</body>
+
+
+
+</html>
