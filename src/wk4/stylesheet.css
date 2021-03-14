@@ -1,0 +1,98 @@
+<style>
+.lettergrootte {
+    font-size: 110%;
+}
+.center {
+    text-align: center;
+}
+html {
+    background: url(https://user-images.githubusercontent.com/73429317/108425957-78304b80-723b-11eb-936d-f818e20909db.jpg)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.yellow-header{
+    color: yellow;
+}
+#left{
+    position: relative;
+    left:0;
+}
+#right{
+    position: relative;
+    right:0;
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+}
+
+table, th, td {
+    border: 1px solid yellow;
+    empty-cells: hide;
+}
+body{
+    color: white;
+}
+.collapsible {
+    background-color: transparent;
+    color: yellow;
+    cursor: pointer;
+    padding: 12px;
+    width: 20%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: yellowgreen;
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: transparent;
+    color: white;
+}
+.gridview .selected, .gridview tbody .selected {
+    background-color: yellow;
+    color: black;
+}
+.container {
+    padding: 20px;
+    background-color: yellow;
+    color: black;
+}
+input[type=text], input[type=submit] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=checkbox] {
+    margin-top: 16px;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+input[type=submit]:hover {
+    opacity: 0.8;
+}
+form {
+    border: 3px solid #f1f1f1;
+    font-family: Arial;
+}
+</style>
