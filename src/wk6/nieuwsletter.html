@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Festival</title>
+    <link rel="stylesheet" href="stylesheet.css">
+
+</head>
+<body>
+<div id="header">
+    <div id="left" style="text-align: left"><img src="https://user-images.githubusercontent.com/73429317/108427466-7ff0ef80-723d-11eb-882c-596cb4ec3dd4.jpg"
+                                                 width="300"/></div>
+    <div class="center">
+        <h1 style="color: yellow">8 t/m 10 <br>Juni 2021</br></h1>
+    </div>
+    <div id="right" style="text-align: right"><img src="https://user-images.githubusercontent.com/73429317/108427466-7ff0ef80-723d-11eb-882c-596cb4ec3dd4.jpg"
+                                                   width="300"/></div>
+</div>
+<form id="emailNewsletterForm">
+    <div class="container">
+        <h2>Schrijf je hier in voor onze nieuwsletter!</h2>
+        <p>Door op abonneren te drukken gaat u akkoord met onze algemene voorwaarden.</p>
+    </div>
+
+    <div class="container" style="background-color:yellow">
+        <div>
+            <input type="text" placeholder="Naam" name="name" required>
+        </div>
+        <div>
+            <input type="text" placeholder="Emailadres" name="mail" required>
+        </div>
+        <div>
+            <label for="frequency">Frequentie</label>
+            <select name="frequency" id="frequency">
+                <option value="monthly">Monthly</option>
+                <option value="Quarterly">Quarterly</option>
+                <option value="Annually">Annually</option>
+            </select>
+        </div>
+        <label>
+            <input type="checkbox" name="acceptprivacy" id="acceptprivacy" />
+            Ik accepteer de privacy voorwaarden voor de registratie van mijn email-adres
+        </label>
+    </div>
+
+    <div class="container">
+        <input type="submit" value="Abboneren">
+    </div>
+</form>
+<p class="yellow-header">Klik <a href="index.html">HIER</a> om terug te gaan.</p>
+<script>
+    const emailNewsletterForm = document.getElementById('emailNewsletterForm');
+    emailNewsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const email = formData.get('mail');
+        const frequency = formData.get('frequency');
+        const acceptprivacy = formData.get('acceptprivacy');
+        if(!acceptprivacy) {
+            alert('accepteer ook onze privacy voorwaarden')
+        } else {
+            alert(`Er is een bevestigingsmail gestuurd naar ${email}`)
+        }
+    })
+</script>
+</body>
+</html>
