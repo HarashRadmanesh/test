@@ -2,9 +2,128 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Festival</title>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-Hello World
+<div id="header">
+    <div id="left" style="text-align: left"><img src="https://user-images.githubusercontent.com/73429317/108427466-7ff0ef80-723d-11eb-882c-596cb4ec3dd4.jpg"
+                                                 width="300"/></div>
+    <div class="center">
+        <h1 style="color: yellow">8 t/m 10 <br>Juni 2021</br></h1>
+    </div>
+    <div id="right" style="text-align: right"><img src="https://user-images.githubusercontent.com/73429317/108427466-7ff0ef80-723d-11eb-882c-596cb4ec3dd4.jpg"
+                                                   width="300"/></div>
+</div>
+<div class="lettergrootte"><p>Dit jaar is het zo ver: de 50 jarige editie van het oudste popfestival van Nederland. De organisatie zal dus
+    groots uitpakken.<br>Op de officiele website <a href="https://www.pinkpop.nl/2021/">Pinkpop 2021</a> vind je
+    alle informatie. Hieronder de line-up van de zondag.</br></p></div>
+<div class="yellow-header">
+    <h3>Line-up zondag 9 juni 2021:</h3>
+</div>
+<hr><table class="gridview" border="1"></hr>
+    <tr onclick="toggleClass(this, 'selected');">
+        <th></th>
+        <th colspan="2">13:00</th>
+        <th colspan="2">14:00</th>
+        <th colspan="2">15:00</th>
+        <th colspan="2">16:00</th>
+        <th colspan="2">17:00</th>
+        <th colspan="2">18:00</th>
+        <th colspan="2">19:00</th>
+        <th colspan="2">20:00</th>
+        <th colspan="2">21:00</th>
+        <th colspan="2">22:00</th>
+        <th colspan="2">23:00</th>
+        <th colspan="2">24:00</th>
+    </tr>
+    <tr onclick="toggleClass(this, 'selected');">
+        <td><em>Mainstage:</em></td>
+        <td colspan="3">Kraantje pappie</td>
+        <td colspan="4">The Krooks</td>
+        <td colspan="4">Krezip</td>
+        <td colspan="5">Lenny Kravitz</td>
+        <td colspan="6">The Cure</td>
+        <td colspan="2">Armin van Buuren</td>
+    </tr>
+    <tr onclick="toggleClass(this, 'selected');">
+        <td><em>IBA<br>parkstad:</br></em></td>
+        <td colspan="2"></td>
+        <td colspan="4">White Lies</td>
+        <td colspan="4">Rowwen Heze</td>
+        <td colspan="4">J Balvin</td>
+        <td colspan="4">Die Antwoord</td>
+    </tr>
+    <tr onclick="toggleClass(this, 'selected');">
+        <td><em>Brightlands:</em></td>
+        <td colspan="2"></td>
+        <td colspan="4">Blood red<br>Shoes</br></td>
+        <td colspan="4">Jack Savoretti</td>
+        <td colspan="4">Miles Kane</td>
+        <td colspan="4">Mark Ronsson</td>
+    </tr>
+    <tr onclick="toggleClass(this, 'selected');">
+        <td><em>Stage 4:</em></td>
+        <td colspan="3">Au/ra</td>
+        <td colspan="3">Confidence<br>Man</br></td>
+        <td colspan="2">Nana<br>Adjoa</br></td>
+        <td colspan="4">Barns<br>Courtney</br></td>
+        <td colspan="5">Boef</td>
+    </tr>
+</table>
+<div class="yellow-header">
+    <h3>Tickets:</h3>
+</div>
+<div class="lettergrootte"><p>De kaartverkoop loopt al een tijdje, dus je moet snel zijn... Klik <a href="tickets.html">
+    HIER</a> voor de prijzen</p>
+</div>
+<button class="collapsible"><strong>Camping...</strong></button>
+<div class="content">
+    <p>Voor het eerst in de geschiedenis van Pinkpop gaat de camping een dag eerder open. Dat betekent dat
+        je al vanaf vrijdagavond (18:00 uur) je tentje kan opzetten op het campingterrein. De <strong>minimale leeftijd</strong>
+        voor dit festival om zonder begeleiding te bezoeken is 12 jaar.</p>
+</div>
+<div class="yellow-header">
+    <h3>Nieuwsletter:</h3>
+</div>
+<div class="lettergrootte"><p>Klik <a href="nieuwsletter.html">HIER</a> om te abbonneren op onze nieuwsletter.</p>
+    <div class="yellow-header">
+        <h3>Jukebox:</h3>
+    </div>
+    <div class="lettergrootte"><p>Klik <a href="jukebox.html">HIER</a> om de vorige optredens van de bands te bekijken! </p></div>
+    <hr>
+    <p><em>Aan informatie op deze site kunnen rechten worden ontleend.</em></p>
+    <p><em>Buro Pinkpop, Geleen</em>
+        <!-- ik heb helaas niet uit kunnen vogelen hoe ik de Javascript kan importen net als CSS -->
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
+            <!-- Ik wist helaas niet hoe ik kon "untogglen" als ik op een andere tabelrow klik-->
+            function toggleClass(el, className) {
+                if (el.className.indexOf(className) >= 0) {
+                    el.className = el.className.replace(className,"");
+                }
+                else {
+                    el.className  += className;
+                }
+            }
+        </script>
+
 </body>
+
+
+
+
 </html>
